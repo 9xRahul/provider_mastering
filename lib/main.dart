@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:provider_mastering/provider/auth_provider.dart';
 import 'package:provider_mastering/provider/count_provider.dart';
 import 'package:provider_mastering/provider/fav_provider.dart';
 import 'package:provider_mastering/provider/slider_provider.dart';
 import 'package:provider_mastering/provider/theme_change.dart';
+import 'package:provider_mastering/screens/auth_scree.dart';
 import 'package:provider_mastering/screens/counter.dart';
 import 'package:provider_mastering/screens/counter_stateless.dart';
 import 'package:provider_mastering/screens/dart_theme.dart';
@@ -26,6 +28,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => SliderProvider()),
         ChangeNotifierProvider(create: (_) => FavouriteProvider()),
         ChangeNotifierProvider(create: (_) => ThemeChanger()),
+        ChangeNotifierProvider(create: (_) => AuthProvider()),
       ],
 
       child: Builder(
@@ -42,7 +45,7 @@ class MyApp extends StatelessWidget {
               brightness: Brightness.dark,
               appBarTheme: AppBarTheme(color: Colors.red),
             ),
-            home: const CounterStateless(),
+            home: const LoginScreen(),
           );
         },
       ),
