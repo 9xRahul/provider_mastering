@@ -5,6 +5,7 @@ import 'package:provider_mastering/provider/fav_provider.dart';
 import 'package:provider_mastering/provider/slider_provider.dart';
 import 'package:provider_mastering/provider/theme_change.dart';
 import 'package:provider_mastering/screens/counter.dart';
+import 'package:provider_mastering/screens/counter_stateless.dart';
 import 'package:provider_mastering/screens/dart_theme.dart';
 import 'package:provider_mastering/screens/favourite/item_list_screen.dart';
 import 'package:provider_mastering/screens/slider_screen.dart';
@@ -35,10 +36,13 @@ class MyApp extends StatelessWidget {
             themeMode: themeChanger.themeMode,
             theme: ThemeData(
               brightness: Brightness.light,
-              colorScheme: .fromSeed(seedColor: Colors.blue),
+              appBarTheme: AppBarTheme(color: Colors.blue),
             ),
-            darkTheme: ThemeData(brightness: Brightness.dark),
-            home: const Counter(),
+            darkTheme: ThemeData(
+              brightness: Brightness.dark,
+              appBarTheme: AppBarTheme(color: Colors.red),
+            ),
+            home: const CounterStateless(),
           );
         },
       ),
