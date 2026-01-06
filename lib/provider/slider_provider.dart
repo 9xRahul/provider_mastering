@@ -7,6 +7,5 @@ class SliderProvider with ChangeNotifier {
   void changeSliderValue(double val) {
     _sliderValue = val;
      notifyListeners();
-    
   }
 }
